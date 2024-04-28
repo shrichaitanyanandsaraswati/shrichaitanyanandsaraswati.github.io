@@ -49,20 +49,47 @@ Initialize();
   let currentIndex = 0;
   
   // Function to update the displayed image
-  function showPhoto(width, height) {
+  function showPhoto(imgWidth, imgHeight) {
     const containerDiv = document.getElementById("container");
-    //containerDiv.style.width = `${window.innerWidth}px`;
-    //containerDiv.style.height = `${window.innerHeight}px`;
+    containerDiv.style.width = `${window.innerWidth}px`;
+    containerDiv.style.height = `${window.innerHeight}px`;
     const img = document.getElementById("gallery-image");
-    if(width > height){
-        console.log("landscape");
-        img.style.width = `${containerDiv.offsetWidth-100}px`;
-        img.style.height = 'auto';
+    if(imgWidth > imgHeight){
+        // image is landscape
+        if(window.innerWidth > window.innerHeight){
+            // viewport is landscape
+            console.log("landscape");
+            img.style.width = `${containerDiv.offsetWidth-100}px`;
+            img.style.maxHeight = `${containerDiv.offsetHeight-10}px`;
+            img.style.height = 'auto';
+        }
+        else {
+            // viewport is portrait
+            img.style.width = 'auto';
+            img.style.maxWidth = `${containerDiv.offsetWidth-100}px`;
+            img.style.maxHeight = `${containerDiv.offsetHeight-10}px`;
+        }
     }
     else {
-        console.log("portrait");
-        img.style.width = 'auto';
-        img.style.height = `${containerDiv.offsetHeight}px`;
+        // image is portrait
+                
+        if(window.innerWidth > window.innerHeight){
+            // viewport is landscape
+            img.style.width = 'auto';
+            img.style.maxWidth = `${containerDiv.offsetWidth-100}px`;
+            img.style.maxHeight = `${containerDiv.offsetHeight-10}px`;
+
+
+        }
+        else {
+            // viewport is portrait
+            
+            img.style.width = `${containerDiv.offsetWidth-100}px`;
+            img.style.maxHeight = `${containerDiv.offsetHeight-10}px`;
+            img.style.height = 'auto';
+        }
+
+        
     }
    
     //img.className = orientation;
