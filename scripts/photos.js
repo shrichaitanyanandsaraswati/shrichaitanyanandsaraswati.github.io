@@ -12,6 +12,11 @@ function Initialize() {
         touchStartX = event.touches[0].clientX;
     });
     
+    galleryImage.addEventListener('touchmove', function(event) {
+        // Prevent the default touchmove event to prevent page scrolling
+        event.preventDefault();
+    });
+    
     galleryImage.addEventListener('touchend', function(event) {
         touchEndX = event.changedTouches[0].clientX;
         handleSwipe();
