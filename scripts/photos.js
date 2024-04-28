@@ -16,7 +16,7 @@ function Initialize() {
         // Prevent the default touchmove event to prevent page scrolling
         event.preventDefault();
     });
-    
+
     galleryImage.addEventListener('touchend', function(event) {
         touchEndX = event.changedTouches[0].clientX;
         handleSwipe();
@@ -51,6 +51,8 @@ Initialize();
   // Function to update the displayed image
   function showPhoto(width, height) {
     const containerDiv = document.getElementById("container");
+    containerDiv.style.width = `${window.innerWidth}px`;
+    containerDiv.style.height = `${window.innerHeight}px`;
     const img = document.getElementById("gallery-image");
     if(width > height){
         console.log("landscape");
