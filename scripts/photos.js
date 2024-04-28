@@ -71,6 +71,8 @@ Initialize();
   
   function CheckandShowPhoto(direction){
     const chkImage = document.getElementById("image-size-check");
+    chkImage.style.maxWidth = `${window.innerWidth}px`;
+    chkImage.style.maxHeight = `${window.innerHeight}px`;
     chkImage.src = `photos\\${currentIndex}.jpg`;
 
     chkImage.onload = function() {
