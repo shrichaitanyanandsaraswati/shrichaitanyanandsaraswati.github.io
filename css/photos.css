@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0 auto;
+}
+.gallery-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: whitesmoke;
+  }
+
+    
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Aligns items to each end of the container */
+    padding: 10px; /* Add some padding for spacing */
+}
+
+/* Optional: Adjust button styles */
+button {
+    padding: 10px 20px;
+    background-color: lightgrey;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  
