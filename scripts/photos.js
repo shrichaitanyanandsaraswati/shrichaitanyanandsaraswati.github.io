@@ -18,7 +18,7 @@ function Initialize() {
     });
     
     function handleSwipe() {
-        const swipeThreshold = 50; // Adjust this value based on your preference
+        const swipeThreshold = 25; // Adjust this value based on your preference
     
         const deltaX = touchEndX - touchStartX;
         if (Math.abs(deltaX) > swipeThreshold) {
